@@ -1,0 +1,19 @@
+server:
+  # 服务器端口号
+  port: 8010
+
+spring:
+  application:
+    name: spring-cloud-eureka
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # registerWithEureka ：表示是否将自己注册到Eureka Server，默认为true。
+    registerWithEureka: false
+    # fetchRegistry ：表示是否从Eureka Server获取注册信息，默认为true。
+    fetchRegistry: false
+    serviceUrl:
+      # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

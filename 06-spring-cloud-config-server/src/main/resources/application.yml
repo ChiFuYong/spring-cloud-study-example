@@ -1,0 +1,26 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    # 服务之间的调用一般用这个名称
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ChiFuYong/SpirngCloud
+          # 公开的仓库可以不用用户名,密码
+          username:
+          password:
+          # 仓库路径下的的相对搜索位置，可以配置多个
+          search-paths: config-client
+      # 仓库的分支
+      label: master
+
+#高可用配置中心,注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+      defaultZone: http://localhost:8010/eureka/

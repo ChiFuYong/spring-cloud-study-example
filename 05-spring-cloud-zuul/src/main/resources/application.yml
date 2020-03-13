@@ -1,0 +1,22 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    # 服务之间的调用一般用这个名称
+    name: spring-cloud-zuul
+
+eureka:
+  client:
+    serviceUrl:
+      # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+      defaultZone: http://localhost:8010/eureka/
+
+zuul:
+  routes:
+    group1:
+      path: /test1/*
+      serviceId: spring-cloud-ribbon
+    group2:
+      path: /test2/*
+      serviceId: spring-cloud-feign

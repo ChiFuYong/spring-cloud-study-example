@@ -1,2 +1,2 @@
 # spring-cloud-study-example
-SpringCloud学习案例
+SpringCloud学习总结及代码案例

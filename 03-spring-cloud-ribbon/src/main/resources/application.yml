@@ -1,0 +1,13 @@
+server:
+  port: 8030
+
+spring:
+  application:
+    # 服务之间的调用一般用这个名称
+    name: spring-cloud-ribbon
+
+eureka:
+  client:
+    serviceUrl:
+      # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。
+      defaultZone: http://localhost:8010/eureka/
